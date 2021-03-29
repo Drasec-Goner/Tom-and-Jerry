@@ -42,11 +42,11 @@ function draw() {
     if (cat.x - mouse.x < cat.width / 2 - mouse.width / 2) {
         cat.velocityX = 0;
         cat.addAnimation("Happy", catHappy);
-        cat.changeAnimation("catHappy");
+        cat.changeAnimation("Happy");
         cat.x = 330;
  
         mouse.addAnimation("Gift", mouseGift);
-        mouse.changeAnimation("mouseGift");
+        mouse.changeAnimation("Gift");
         cat.bounce(mouse);
      }
 
@@ -61,10 +61,10 @@ function keyPressed(){
 
     cat.velocityX = -5;
     cat.addAnimation("Cat Run", catWalk);
-    cat.changeAnimation("catWalk");
+    cat.changeAnimation("Cat Run");
 
     mouse.addAnimation("Mouse Taunt", mouseTaunt);
-    mouse.changeAnimation("mouseTaunt");
+    mouse.changeAnimation("Mouse Taunt");
 }
 
 
