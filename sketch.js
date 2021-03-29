@@ -1,5 +1,5 @@
 var ground, groundImg;
-var cat, catImg, catWalk, catHappy; 
+var cat, catImg, catRu, catHappy; 
 var mouse, mouseImg, mouseTaunt, mouseGift;
 function preload() {
     groundImg = loadImage("garden.png");
@@ -12,7 +12,7 @@ function preload() {
 
     catImg = loadAnimation("cat1.png");
 
-    catWalk = loadAnimation("cat2.png", "cat3.png");
+    catRun = loadAnimation("cat2.png", "cat3.png");
 
     catHappy = loadAnimation("cat4.png");
 }
@@ -39,11 +39,11 @@ function draw() {
     background(255);
     //Write condition here to evalute if cat and mouse collide
 
-    if (cat.x - mouse.x < cat.width / 2 - mouse.width / 2) {
+    if (cat.x - mouse.x < cat.width - mouse.width) {
         cat.velocityX = 0;
         cat.addAnimation("Happy", catHappy);
         cat.changeAnimation("Happy");
-        cat.x = 330;
+        cat.x = 250;
  
         mouse.addAnimation("Gift", mouseGift);
         mouse.changeAnimation("Gift");
@@ -60,7 +60,7 @@ function keyPressed(){
   if (keyCode === LEFT_ARROW) {
 
     cat.velocityX = -5;
-    cat.addAnimation("Cat Run", catWalk);
+    cat.addAnimation("Cat Run", catRun);
     cat.changeAnimation("Cat Run");
 
     mouse.addAnimation("Mouse Taunt", mouseTaunt);
